@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Official-style portfolio concept for Mr Pattlo, featuring his creator journey, live entertainment, social presence, highlights, and collaborations."
+    />
+    <title>Mr Pattlo | TikTok Live Host Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .tiktok-atmosphere {
+        z-index: 2;
+      }
+      .social-cover {
+        position: relative;
+        display: block;
+        aspect-ratio: 2.667/1;
+        overflow: hidden;
+        border: 1px solid #4f4231;
+        background: #121212;
+        box-shadow: 0 18px 55px rgba(0, 0, 0, 0.36);
+      }
+      .social-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.55s ease;
+      }
+      .social-cover:hover img {
+        transform: scale(1.035);
+      }
+      .social-cover span {
+        position: absolute;
+        right: 16px;
+        bottom: 14px;
+        padding: 9px 12px;
+        background: #0b0b0dcc;
+        color: #e8ad54;
+        font: 9px "DM Mono";
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: 0.3s;
+      }
+      .social-cover:hover span {
+        opacity: 1;
+      }
+      @media (max-width: 800px) {
+        .social-cover span {
+          opacity: 1;
+        }
+      }
+    </style>
+    <style>
+      .battle-card {
+        overflow: hidden;
+      }
+      .battle-shot {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.14;
+        filter: saturate(0.8);
+      }
+      .battle-card > *:not(.battle-shot) {
+        z-index: 1;
+      }
+      .portrait-wrap .profile-photo {
+        position: relative;
+        width: min(38vw, 540px);
+        height: min(38vw, 540px);
+        max-width: none;
+        object-fit: cover;
+        object-position: center 38%;
+        border-radius: 50%;
+        border: 2px solid rgba(232, 173, 84, 0.72);
+        mix-blend-mode: normal;
+        filter: contrast(1.04) saturate(0.92);
+        box-shadow: 0 0 45px rgba(255, 87, 31, 0.28);
+      }
+      .brand-mark {
+        display: block;
+        width: 92px;
+        height: 56px;
+        object-fit: contain;
+      }
+      .tiktok-atmosphere {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .tiktok-atmosphere img {
+        position: absolute;
+        width: clamp(28px, 4vw, 68px);
+        opacity: 0;
+        filter: drop-shadow(0 0 12px rgba(0, 242, 234, 0.25));
+        animation: logoDrift var(--dur) ease-in-out var(--delay) infinite;
+      }
+      .tiktok-atmosphere img:nth-child(1) {
+        left: 7%;
+        top: 12%;
+        --dur: 14s;
+        --delay: -4s;
+      }
+      .tiktok-atmosphere img:nth-child(2) {
+        left: 84%;
+        top: 8%;
+        --dur: 17s;
+        --delay: -11s;
+      }
+      .tiktok-atmosphere img:nth-child(3) {
+        left: 45%;
+        top: 27%;
+        --dur: 13s;
+        --delay: -8s;
+      }
+      .tiktok-atmosphere img:nth-child(4) {
+        left: 18%;
+        top: 52%;
+        --dur: 19s;
+        --delay: -15s;
+      }
+      .tiktok-atmosphere img:nth-child(5) {
+        left: 73%;
+        top: 46%;
+        --dur: 15s;
+        --delay: -2s;
+      }
+      .tiktok-atmosphere img:nth-child(6) {
+        left: 91%;
+        top: 72%;
+        --dur: 18s;
+        --delay: -12s;
+      }
+      .tiktok-atmosphere img:nth-child(7) {
+        left: 35%;
+        top: 81%;
+        --dur: 16s;
+        --delay: -7s;
+      }
+      .tiktok-atmosphere img:nth-child(8) {
+        left: 5%;
+        top: 89%;
+        --dur: 20s;
+        --delay: -17s;
+      }
+      @keyframes logoDrift {
+        0%,
+        100% {
+          transform: translate3d(-25px, 20px, 0) rotate(-13deg) scale(0.7);
+          opacity: 0;
+        }
+        18%,
+        78% {
+          opacity: 0.075;
+        }
+        50% {
+          transform: translate3d(38px, -60px, 0) rotate(18deg) scale(1);
+          opacity: 0.13;
+        }
+      }
+      @media (max-width: 800px) {
+        .portrait-wrap .profile-photo {
+          width: 65vw;
+          height: 65vw;
+        }
+        .tiktok-atmosphere img {
+          width: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tiktok-atmosphere" aria-hidden="true">
+      <img src="assets/tiktok-logo-transparent.png" alt="" /><img
+        src="assets/tiktok-logo-transparent.png"
+        alt=""
+      /><img src="assets/tiktok-logo-transparent.png" alt="" /><img
+        src="assets/tiktok-logo-transparent.png"
+        alt=""
+      /><img src="assets/tiktok-logo-transparent.png" alt="" /><img
+        src="assets/tiktok-logo-transparent.png"
+        alt=""
+      /><img src="assets/tiktok-logo-transparent.png" alt="" /><img
+        src="assets/tiktok-logo-transparent.png"
+        alt=""
+      /><img src="assets/tiktok-logo-transparent.png" alt="" /><img
+        src="assets/tiktok-logo-transparent.png"
+        alt=""
+      /><img src="assets/tiktok-logo-transparent.png" alt="" /><img
+        src="assets/tiktok-logo-transparent.png"
+        alt=""
+      /><img src="assets/tiktok-logo-transparent.png" alt="" /><img
+        src="assets/tiktok-logo-transparent.png"
+        alt=""
+      />
+    </div>
+    <style>
+      .tiktok-atmosphere {
+        z-index: 2;
+      }
+      .hero-copy,
+      .portrait-wrap {
+        z-index: 3;
+      }
+      .tiktok-atmosphere img {
+        animation-duration: calc(var(--dur) * 0.42);
+      }
+      .tiktok-atmosphere img:nth-child(9) {
+        left: 57%;
+        top: 7%;
+        --dur: 12s;
+        --delay: -5s;
+      }
+      .tiktok-atmosphere img:nth-child(10) {
+        left: 29%;
+        top: 39%;
+        --dur: 10s;
+        --delay: -9s;
+      }
+      .tiktok-atmosphere img:nth-child(11) {
+        left: 63%;
+        top: 67%;
+        --dur: 13s;
+        --delay: -3s;
+      }
+      .tiktok-atmosphere img:nth-child(12) {
+        left: 11%;
+        top: 72%;
+        --dur: 11s;
+        --delay: -7s;
+      }
+      .tiktok-atmosphere img:nth-child(13) {
+        left: 80%;
+        top: 30%;
+        --dur: 14s;
+        --delay: -10s;
+      }
+      .tiktok-atmosphere img:nth-child(14) {
+        left: 48%;
+        top: 93%;
+        --dur: 12s;
+        --delay: -6s;
+      }
+    </style>
+    <div class="grain"></div>
+    <div class="cursor-glow"></div>
+    <header class="nav">
+      <a class="brand" href="#home" aria-label="MR PATTLO home"
+        ><img
+          class="brand-mark"
+          src="assets/mr-pattlo-logo.png"
+          alt="MR PATTLO logo" /></a
+      ><button class="menu" aria-label="Open navigation" aria-expanded="false">
+        <i></i><i></i>
+      </button>
+      <nav>
+        <a href="#about">About</a><a href="#journey">Journey</a
+        ><a href="#moments">Moments</a><a href="#connect">Connect</a>
+      </nav>
+      <a class="nav-live" href="#battle"><b></b> LIVE</a>
+    </header>
+    <style>
+      .tiktok-atmosphere img {
+        filter: drop-shadow(0 0 14px rgba(0, 242, 234, 0.34));
+      }
+      @keyframes logoDrift {
+        0%,
+        100% {
+          transform: translate3d(-25px, 20px, 0) rotate(-13deg) scale(0.7);
+          opacity: 0;
+        }
+        18%,
+        78% {
+          opacity: 0.12;
+        }
+        50% {
+          transform: translate3d(38px, -60px, 0) rotate(18deg) scale(1);
+          opacity: 0.19;
+        }
+      }
+      @media (max-width: 800px) {
+        .social-cover {
+          width: 100%;
+        }
+        .hero-copy {
+          max-width: 100%;
+        }
+        .portrait-wrap {
+          pointer-events: none;
+        }
+      }
+    </style>
+    <style>
+      @media (max-width: 800px) {
+        .hero {
+          padding-top: 94px;
+          padding-bottom: 36px;
+          min-height: 650px;
+        }
+        .hero-copy {
+          margin-top: 0;
+        }
+        .portrait-wrap {
+          height: 52vh;
+        }
+      }
+      @media (max-width: 420px) {
+        .hero {
+          padding-top: 88px;
+          min-height: 610px;
+        }
+        .hero-role {
+          margin-top: 23px;
+        }
+        .tagline {
+          margin-bottom: 22px;
+        }
+      }
+    </style>
+    <style>
+      @media (max-width: 800px) {
+        body {
+          overflow-x: hidden;
+        }
+        .nav {
+          padding: 0 6vw;
+        }
+        .brand-mark {
+          width: 78px;
+          height: 52px;
+        }
+        .hero {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: flex-start;
+          min-height: auto;
+          padding: 94px 7vw 42px;
+        }
+        .hero-copy {
+          position: relative;
+          z-index: 3;
+        }
+        .portrait-wrap {
+          position: relative;
+          right: auto;
+          bottom: auto;
+          width: 100%;
+          height: 360px;
+          margin: 20px 0 0;
+          align-self: auto;
+          opacity: 1;
+        }
+        .portrait-wrap .profile-photo {
+          width: min(70vw, 350px);
+          height: min(70vw, 350px);
+        }
+        .portrait-ring {
+          width: min(70vw, 350px);
+        }
+        .portrait-label {
+          right: 6%;
+          bottom: 10%;
+        }
+        .scroll,
+        .hero-side {
+          display: none;
+        }
+        .section {
+          padding: 72px 7vw;
+        }
+        .about,
+        .experience,
+        .social,
+        .highlights,
+        .contact {
+          gap: 28px;
+        }
+        .facts {
+          margin-top: 0;
+        }
+        .timeline {
+          width: 100%;
+          min-width: 0;
+          overflow-x: auto;
+          padding-bottom: 16px;
+          scrollbar-width: thin;
+        }
+        .milestone {
+          min-width: 145px;
+        }
+        .battle-card {
+          width: 100%;
+          padding: 52px 6% 50px;
+        }
+        .contact-form {
+          grid-template-columns: 1fr;
+        }
+        .contact-form label {
+          grid-column: 1/-1;
+        }
+        .social-cover {
+          width: 100%;
+        }
+        footer {
+          padding: 28px 7vw;
+        }
+      }
+      @media (max-width: 420px) {
+        .hero {
+          padding-top: 84px;
+          padding-bottom: 30px;
+        }
+        .portrait-wrap {
+          height: 305px;
+          margin-top: 12px;
+        }
+        .portrait-wrap .profile-photo,
+        .portrait-ring {
+          width: 72vw;
+          height: 72vw;
+        }
+        .portrait-label {
+          right: 0;
+          bottom: 5%;
+        }
+        .section {
+          padding: 62px 6vw;
+        }
+        .battle {
+          padding: 72px 5vw;
+        }
+        .battle-card {
+          padding: 48px 4% 50px;
+        }
+        .fighter {
+          width: 94px;
+        }
+        .avatar {
+          width: 70px;
+        }
+        .battle-note {
+          font-size: 8px;
+        }
+        .social-cover {
+          aspect-ratio: 1.75/1;
+        }
+        .social-cover img {
+          object-position: center;
+        }
+      }
+    </style>
+    <main>
+      <section class="hero" id="home">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Pakistan's live energy</p>
+          <h1>MR<br /><em>PATTLO</em></h1>
+          <p class="hero-role">
+            TikTok Live Host <b>•</b> Content Creator <b>•</b> Entertainer
+          </p>
+          <p class="tagline">Live. <i>Entertain.</i> Connect.</p>
+          <div class="actions">
+            <a class="button primary" href="#journey"
+              >Explore journey <strong>↘</strong></a
+            ><a
+              class="button ghost"
+              href="https://www.tiktok.com/@mrpenterprise1?is_from_webapp=1&amp;sender_device=pc"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Follow on TikTok <strong>↗</strong></a
+            >
+          </div>
+        </div>
+        <div class="portrait-wrap reveal delay">
+          <div class="portrait-ring"></div>
+          <img
+            class="profile-photo"
+            src="assets/profile.webp"
+            alt="Mr Patlo"
+            fetchpriority="high"
+          />
+          <div class="portrait-label">
+            LIVE HOST<br /><span>EST. 2022</span>
+          </div>
+          <div class="social-float">♪</div>
+          <div class="social-float second">◎</div>
+        </div>
+        <a href="#about" class="scroll">SCROLL TO EXPLORE <span></span></a>
+        <div class="hero-side">01 <i></i> 06</div>
+      </section>
+      <section class="about section" id="about">
+        <div class="section-intro reveal">
+          <p class="eyebrow"><span></span> The person behind the live</p>
+          <h2>A connection that<br />feels <em>personal.</em></h2>
+        </div>
+        <div class="about-text reveal delay">
+          <p>
+            Muhammad Anser Jutt, popularly known as Mr Pattlo, is a Pakistani
+            TikTok Live Host and digital entertainer known for his energetic
+            live sessions, audience engagement, and growing online presence.
+          </p>
+          <p class="muted">
+            Every session creates a room for laughter, stories, friendly
+            competition and a community that keeps coming back.
+          </p>
+        </div>
+        <div class="facts">
+          <div class="fact reveal">
+            <small>01</small><b>Muhammad Anser Jutt</b><span>Real name</span>
+          </div>
+          <div class="fact reveal">
+            <small>02</small><b>Mr Pattlo</b><span>Known as</span>
+          </div>
+          <div class="fact reveal">
+            <small>03</small><b>1991</b><span>Born</span>
+          </div>
+          <div class="fact reveal">
+            <small>04</small><b>Sialkot, Pakistan</b><span>From</span>
+          </div>
+          <div class="fact reveal">
+            <small>05</small><b>Bhagowal</b><span>Village</span>
+          </div>
+          <div class="fact reveal">
+            <small>06</small><b>TikTok Live Host</b><span>Profession</span>
+          </div>
+          <div class="fact reveal">
+            <small>07</small><b>January 2022</b><span>Hosting since</span>
+          </div>
+        </div>
+      </section>
+      <section class="journey section" id="journey">
+        <div class="journey-head reveal">
+          <p class="eyebrow"><span></span> Creator timeline</p>
+          <h2>A journey in <em>motion.</em></h2>
+          <p>From Sialkot to screens around the world.</p>
+        </div>
+        <div class="timeline">
+          <div class="line"></div>
+          <article class="milestone reveal">
+            <b>1991</b><i></i>
+            <p>Born in Sialkot,<br />Pakistan</p>
+          </article>
+          <article class="milestone reveal">
+            <b>2022</b><i></i>
+            <p>Started TikTok<br />Live Hosting</p>
+          </article>
+          <article class="milestone reveal">
+            <b>2023</b><i></i>
+            <p>Growing<br />Recognition</p>
+          </article>
+          <article class="milestone reveal">
+            <b>2024</b><i></i>
+            <p>Expanding<br />Audience</p>
+          </article>
+          <article class="milestone reveal">
+            <b>2025</b><i></i>
+            <p>Major Live<br />Presence</p>
+          </article>
+          <article class="milestone reveal">
+            <b>2026</b><i></i>
+            <p>Established Digital<br />Creator</p>
+          </article>
+        </div>
+      </section>
+      <section class="battle section" id="battle">
+        <div class="battle-bg"></div>
+        <div class="battle-note reveal">
+          PORTFOLIO VISUAL CONCEPT — NOT LIVE DATA
+        </div>
+        <div class="battle-card reveal">
+          <img
+            class="battle-shot"
+            src="assets/live-battle.webp"
+            alt="Mr Pattlo in a live battle"
+          />
+          <div class="battle-live"><i></i> LIVE BATTLE</div>
+          <div class="fighter">
+            <div class="avatar patlo">
+              <img src="assets/portrait-blue.webp" alt="Mr Pattlo" />
+            </div>
+            <b>MR PATTLO</b><small>Host</small>
+          </div>
+          <div class="versus">VS</div>
+          <div class="fighter">
+            <div class="avatar rival">
+              <img
+                src="assets/tiktok-competitor.webp"
+                alt="Featured TikTok competitor"
+              />
+            </div>
+            <b>FEATURED<br />CREATOR</b><small>Guest</small>
+          </div>
+          <div class="battle-bar"><span></span></div>
+          <div class="reactions">♥ &nbsp; ✦ &nbsp; 🎁 &nbsp; ♥</div>
+        </div>
+      </section>
+      <section class="social section">
+        <div class="social-intro reveal">
+          <p class="eyebrow"><span></span> Social presence</p>
+          <h2>Connect with<br /><em>Mr Pattlo.</em></h2>
+        </div>
+        <a
+          href="https://www.tiktok.com/@mrpenterprise1?is_from_webapp=1&amp;sender_device=pc"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-cover reveal"
+          aria-label="Open Mr Pattlo on TikTok"
+          ><img
+            loading="lazy"
+            src="assets/social-cover.webp"
+            alt="MR PATTLO TikTok Live Host cover artwork"
+          /><span>Visit TikTok ↗</span></a
+        >
+      </section>
+      <section class="contact section" id="connect">
+        <div class="contact-copy reveal">
+          <p class="eyebrow"><span></span> Collaborations &amp; bookings</p>
+          <h2>Let's make<br />it <em>live.</em></h2>
+          <p>
+            For collaborations, appearances, brand partnerships, and creator
+            opportunities.
+          </p>
+          <a
+            class="email-link"
+            href="https://www.tiktok.com/@mrpenterprise1?is_from_webapp=1&amp;sender_device=pc"
+            target="_blank"
+            rel="noopener noreferrer"
+            >@mrpenterprise1 <span>↗</span></a
+          ><small>Connect with MR PATTLO on TikTok.</small>
+        </div>
+        <form class="contact-form reveal delay">
+          <label>Name<input required placeholder="Your name" /></label
+          ><label
+            >Email<input
+              required
+              type="email"
+              placeholder="you@email.com" /></label
+          ><label
+            >Subject<input required placeholder="Let's work together" /></label
+          ><label
+            >Message<textarea
+              required
+              placeholder="Tell us about your idea..."
+            ></textarea></label
+          ><button class="button primary" type="submit">
+            Send message <strong>↗</strong>
+          </button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="#home" aria-label="MR PATTLO home"
+        ><img
+          class="brand-mark"
+          src="assets/mr-pattlo-logo.png"
+          alt="MR PATTLO logo"
+      /></a>
+      <p>Live • Entertain • Connect</p>
+      <div>© 2026 Mr Pattlo Portfolio Concept</div>
+      <small
+        >Unofficial portfolio concept created for demonstration purposes.</small
+      >
+    </footer>
+    <dialog class="preview">
+      <button class="close" aria-label="Close preview">×</button>
+      <div class="preview-inner">
+        <span class="play-big">▶</span>
+        <p>LIVE MOMENT</p>
+        <h2></h2>
+        <small>Preview concept — video source to be added.</small>
+      </div>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
